@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="source/css/style.css">
+  <script type="text/javascript" src="source/js/index.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+  <title>CV</title>
+</head>
+<body>
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span ></span>
+        <span></span>
+        <span></span>
+      </div>
+  <div class="d">
+    <div class="dd">
+       <p style="color: white">Age</p>
+      <select id="Age" onchange="sub()">
+        <option value="all">All</option>
+        <option value="small">Age < 30</option>
+        <option value="big">Age > 30</option>
+      </select> 
+    </div>
+
+    <div class="dd">
+        <p style="color: white">City</p>
+        <select id="Address" onchange="addr()">
+          <option value="All">All</option>
+        </select> 
+    </div>
+
+    <div class="dd">
+        <p style="color: white">Sort</p>
+        <select id="Sort" onchange="sub()">
+          <option value="all">All</option>
+          <option value="old">Old-->New</option>
+          <option value="new">New-->Old</option>
+        </select> 
+        
+    </div>
+    <div class="dd">
+        <p style="color: white">Skills</p>
+        <div class="slidecontainer">
+            <input  type="range" min="0" max="100" value="0" class="slider" id="myRange">
+            <p style="color: white;margin: 0">Html Value: <span id="demo"></span> %</p>
+          </div>
+      
+      
+  </div>
+
+    
+    <div class="dd">
+      <p style="color: white">Name</p>
+      <select id="list">
+        <option></option>
+      </select> 
+        <button name="btn" onclick="handleSubmissions()">Change</button>
+        <button onclick="myFunction()">Reset</button>
+      </div>
+    </div>
+  <div class="main"> 
+    
+      
+
+    <div class="container">
+      <div class="grid-container content">
+        <div class="col-1-10 sidebar">
+          <center>
+                           
+            
+          <ul class="sidebar-list " style="margin: 0;margin-top: 12%;">
+            
+            <li data-type="A" class="sidebar-list-option hover-opacity" style="font-weight: 400">
+              <i class="fa fa-user"></i>
+             <p style="margin: 0">About</p> 
+            </li>
+            
+            <li data-type="B" class="sidebar-list-option hover-opacity" style="font-weight: 400">
+              <i class="fa fa-graduation-cap"></i>
+              <p style="margin: 0">Education</p>
+            </li>
+            
+            <li data-type="C" class="sidebar-list-option hover-opacity" style="font-weight: 400">
+              <i class="fas fa-briefcase"></i>
+              <p style="margin: 0">experience</p>
+            </li>
+            
+            <li data-type="D" class="sidebar-list-option hover-opacity" style="font-weight: 400"> 
+              <i class="fas fa-chart-bar"></i>
+              <p style="margin: 0">Skills</p>
+            </li>
+            
+            <li data-type="E" class="sidebar-list-option hover-opacity" style="font-weight: 400">
+              <i class="fa fa-at"></i>
+              <p style="margin: 0">Contact</p>
+            </li>
+          </ul>
+        </center>
+        </div>
+        
+        <div class="col- main-content" style="background-image: url(images/bg.jpg)">
+          
+           <center>
+             <div style="width: 124px;height: 124px">
+                <img id="images" class="imag" src="images/profile.png">
+             </div>     
+          
+         <h1 id="Name">Ryan Adlard</h1>
+         <p style="color: #009688">Web Designer</p>
+         
+         <div class="xlarge section ">
+             <a style="color: black" id="linkedin" href="index.html">
+              <span  class="fab fa-linkedin hover-opacity"></span>
+            </a>
+            <a  style="color: black" id="Twitter" href="index.html">
+              <i class="fab fa-twitter hover-opacity"></i>
+            </a>
+            <a  style="color: black" id="github" href="index.html">
+              <i  class="fab fa-github hover-opacity"></i>
+            </a>  
+            <a  style="color: black" id="spotify" href="index.html">
+                <i   class="fab fa-spotify hover-opacity"  href="index.html"></i>
+                </a>
+            <a  style="color: black" id="stack-overflow" href="index.html">
+            <i   class="fab fa-stack-overflow hover-opacity"></i>
+            </a>
+          </div>
+          <div style=" position: absolute;bottom: 0;left: 0;text-align: left;width: 100%;height: 50px;padding: 15px">
+            <a  style=" color: black" id="pdf"  href="index.html" class="hover-opacity" onclick="handleSubmissions()">
+              Download CV
+              <i class="fas fa-download">
+              </i>
+            </a>
+          </div>
+        
+        </div>
+        <div class="col- right-card">
+          <div class="card A selected">
+            <p  class="title">About Me</p>
+            <p id="about">I am Ryan Adlard, web designer from USA, California. 
+              I have rich experience in web site design and building and customization, also 
+              I am good at wordpress. I love to talk with you about our unique.</p>
+              <ul>
+                  <p><strong>Date of Birth . . . . .</strong></p><p id="date_of_birth"> 24.08.1990</p>
+                  <p><strong>Residence . . . . .</strong></p><p id="Residence"> USA</p>
+                  <p ><strong>Address . . . . .</strong></p><p id="Address"> California, USA</p>
+                </ul>
+            
+    
+            
+            </div>
+          <div class="card B">
+            <p class="title">
+              Education
+            </p>
+            <center>
+              <p id="Education">Hacattepe University <br>Faculty of Engineer<br>Computer Engineer</p>
+              <p>Anodolu University <br>Faculty of Management - Eskişehir, TURKEY<br>Aviation Management</p>
+            </center>
+          </div>
+          <div class="card C">
+          <p class="title">
+            Work
+          </p>  
+          </div>
+          <div class="card D">
+            <p class="title">
+              Skills
+            </p>
+            <p>HTML5  <i class="fab fa-html5" style="color:rgb(81, 202, 101)" ></i></p>
+              <div class="light-grey round-xlarge">
+                  <div id="HTML5"class="teal" style="width:70%">70%</div>
+                </div>
+            <p>CSS3  <i class="fab fa-css3-alt"style="color:rgb(81, 202, 101)"></i></p>
+              <div class="light-grey round-xlarge">
+                  <div id="CSS3" class="teal" style="width:50%">50%</div>
+                </div>
+             <p>PHP  <i class="fab fa-php"style="color:rgb(81, 202, 101)"></i></p>
+              <div class="light-grey round-xlarge">
+                  <div id="PHP" class="teal" style="width:95%">95%</div>
+                </div>
+                <p>JS  <i class="fab fa-js"style="color:rgb(81, 202, 101)"></i></p>
+                <div class="light-grey round-xlarge">
+                    <div id="JS" class="teal" style="width:95%">95%</div>
+                  </div>
+                  <p>Python  <i class="fab fa-python"style="color:rgb(81, 202, 101)"></i></p>
+              <div class="light-grey round-xlarge">
+                  <div id="PYTHON" class="teal" style="width:95%">95%</div>
+                </div>  
+                <p>C#  <i class="fas fa-copyright" style="color:rgb(81, 202, 101)"></i></p>
+              <div class="light-grey round-xlarge">
+                  <div id="C#"class="teal" style="width:70%">70%</div>
+                </div>
+                <p>PHOTOSHOP  <i class="fab fa-product-hunt"style="color:rgb(81, 202, 101)"></i></p>
+              <div class="light-grey round-xlarge">
+                  <div id="PHOTOSHOP"class="teal" style="width:70%">70%</div>
+                </div>
+                <p>ILLUSTRATOR  <i class="fas fa-italic"style="color:rgb(81, 202, 101)"></i></p>
+              <div class="light-grey round-xlarge">
+                  <div id="ILLUSTRATOR"class="teal" style="width:70%">70%</div>
+                </div>
+                
+          </div>
+          <div class="card E">
+            <p class="title">
+              Contact
+            </p>
+            <div >
+              <input class="frm" type="text"name="name" placeholder="Full Name">
+            </div>
+            <div> 
+              <input class="frm" type="text" name="email" placeholder="Email Address">
+             </div>
+             <div>
+               <textarea class="frm" name="message" placeholder="Your Message"></textarea>
+              </div>
+              <div>
+                <button  name="button" class="hover-opacity" style="cursor: pointer;float: right;">Send Message</button>
+              </div>
+              <div>
+                <p>Telephone:</p>
+              <a href="tel:321-562-867-5309" style="color: #009688" id="tel">321-562-867-5309</a>
+              <p>E-Mail</p>
+              <a href="mailtomailto:webmaster@example.com" style="color: #009688">webmaster@example.com</a>
+              <p>Address</p>
+              <p style="color: #009688">California, USA</p>
+            </div>
+            </center>          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
